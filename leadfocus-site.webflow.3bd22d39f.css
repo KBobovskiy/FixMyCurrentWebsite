@@ -3642,21 +3642,38 @@ p {
   grid-column-end: span 1;
 }
 
-div.w-layout-grid.grid-3-cols {
+/* * * * * * * * */
+.w-layout-grid.grid-3-cols {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
   align-items: stretch;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .hero-paragraph > a {
+  -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
-div.pricing-box {
+.pricing-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 16px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 32%;
 }
@@ -3667,27 +3684,61 @@ div.pricing-box {
   max-width: 240px;
 }
 
-.badge {
+.badge,
+a[href="#pricing"] {
   text-align: center;
 }
 
-@media (max-width: 767px) {
-  .pricing-box-price {
-    flex-direction: column;
-    align-items: center;
-  }
+nav.navigation.footer {
+  padding-right: 48px;
+}
 
-  a[href="#pricing"] {
-    width: unset !important;
+@media screen and (max-width: 991px) {
+  .navigation.footer {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 }
 
-@media (max-width: 479px) {
-  div.w-layout-grid.grid-3-cols {
+@media screen and (max-width: 767px) {
+  .pricing-box-price {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .navigation.footer {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  .arrow-pointer.cta {
+    margin-top: -24px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .w-layout-grid.grid-3-cols {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 
-  div.pricing-box {
+  .pricing-box {
     width: 100%;
   }
 
